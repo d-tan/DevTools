@@ -1,0 +1,34 @@
+using UnityEngine;
+
+/// <summary>
+/// 
+/// </summary>
+public class #SCRIPTNAME# : MonoBehaviour {
+
+	#region Variables
+
+
+
+	#endregion ^ Variables
+
+ 
+	#region Unity Methods
+
+
+
+	#endregion ^ Unity Methods
+
+
+	#region Public Methods
+
+
+
+	#endregion ^ Public Methods
+
+ 
+	#region Helper Methods
+
+
+
+	#endregion ^ Helper Methods
+}
