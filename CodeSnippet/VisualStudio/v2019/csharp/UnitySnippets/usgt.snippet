@@ -18,9 +18,8 @@
 					<Default>int</Default>
 				</Literal>
 			</Declarations>
-			<Code Language="csharp"><![CDATA[
-			
-			private static $type$ instance;
+			<Code Language="csharp">
+  <![CDATA[private static $type$ instance;
 
 			public static $type$ Instance
 			{
@@ -30,9 +29,9 @@
 
 						instance = FindObjectOfType<$type$>(); // find in scene
 						
-						Debug.Log("No $type$ in game, making new one.");
-
 						if (instance == null) {
+						  Debug.Log("No $type$ in game, making new one.");
+            
 							// make new one
 							instance = new GameObject("Spawned $type$", typeof($type$)).GetComponent<$type$>();
 						}
@@ -56,8 +55,7 @@
 					DontDestroyOnLoad(this);
 				}
 
-    		}
-			$end$]]>
+    		} $end$]]>
 			</Code>
 		</Snippet>
 	</CodeSnippet>
