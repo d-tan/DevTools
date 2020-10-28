@@ -27,6 +27,11 @@
 					<ToolTip>Property Name</ToolTip>
 					<Default>Foo</Default>
 				</Literal>
+				<Literal>
+					<ID>Event</ID>
+					<ToolTip>Event Type</ToolTip>
+					<Default>UnityEvent</Default>
+				</Literal>
 			</Declarations>
 			<Code Language="csharp"><![CDATA[private $type$ $name$;
 			
@@ -39,7 +44,9 @@
 				}
 			}
 
-			public UnityEvent $Name$UpdateEvent = new UnityEvent();
+			protected $Event$ $Name$UpdateEvent = new $Event$();
+
+			public $Event$ Get$Name$UpdateEvent => $Name$UpdateEvent;
 			]]>
 			</Code>
 		</Snippet>
