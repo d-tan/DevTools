@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Dictionary</Title>
+			<Shortcut>dict</Shortcut>
+			<Description>Code snippet to create a dictionary</Description>
+			<Author>Danny T</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+        		<Literal>
+					<ID>access</ID>
+					<ToolTip>Access Type</ToolTip>
+					<Default>private</Default>
+				</Literal>
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>Property Type</ToolTip>
+					<Default>MyType</Default>
+				</Literal>
+				<Literal>
+					<ID>key</ID>
+					<ToolTip>Type for the key</ToolTip>
+					<Default>Type</Default>
+				</Literal>
+				<Literal>
+					<ID>value</ID>
+					<ToolTip>Type for the value</ToolTip>
+					<Default>Type</Default>
+				</Literal>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>List Name</ToolTip>
+					<Default>myList</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp"><![CDATA[$access$ Dictionary<$key$, $value$> $name$ = new Dictionary<$key$, $value$>();]]>
+			</Code>
+
+			<Imports>
+      <Import>
+        <Namespace>System.Collections</Namespace>
+      </Import>
+      </Imports>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
