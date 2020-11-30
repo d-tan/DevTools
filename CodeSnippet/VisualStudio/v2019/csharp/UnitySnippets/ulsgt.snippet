@@ -12,16 +12,18 @@
 		</Header>
 		<Snippet>
 			<Declarations>
-				<Literal>
-					<ID>type</ID>
-					<ToolTip>Property type</ToolTip>
-					<Default>Type</Default>
-				</Literal>
+				<Literal default="true" Editable="false">
+                    <ID>classname</ID>
+                    <ToolTip>Class name</ToolTip>
+                    <Function>ClassName()</Function>
+                    <Default>ClassNamePlaceholder</Default>
+                </Literal>
 			</Declarations>
 			<Code Language="csharp">
-  			<![CDATA[private static $type$ instance;
+  			<![CDATA[#region Singleton
+			private static $classname$ instance;
 
-			public static $type$ Instance {
+			public static $classname$ Instance {
 				get { 
 					Init();
             		return instance; 
@@ -32,13 +34,15 @@
 				// Unity replaces a destroyed game object with a non-null "destroyed" object.
 				// Using .Equals checks against that.
 				if (instance == null || instance.Equals(null)) {
-					GameObject gameObject = new GameObject("Spawned $type$");
-					instance = gameObject.AddComponent<$type$>();
+					GameObject gameObject = new GameObject("Spawned $classname$");
+					instance = gameObject.AddComponent<$classname$>();
 					DontDestroyOnLoad(gameObject);
 
-					Debug.LogFormat("Spawned new {0} singleton", typeof($type$));
+					Debug.LogFormat("Spawned new {0} singleton", typeof($classname$));
 				}
-			}$end$]]>
+			}
+			#endregion Singleton
+			$end$]]>
 			</Code>
 
 			<Imports>
