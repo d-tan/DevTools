@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Basic Property Binding</Title>
+			<Author>Jacob Duniam</Author>
+			<Description>Implements a basic property binding</Description>
+			<Shortcut>propb</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[[Binding]
+        public $type$ $name$ {
+        get { return _$name$; }
+        private set {
+				if ($name$.Equals(value)) return;
+        _$name$ = value;
+        OnPropertyChanged(nameof($name$));
+        }
+        }
+        private $type$ _$name$;]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>The type of the variable you are declaring</ToolTip>
+					<Default>string</Default>
+				</Literal>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>The name of the variable you are declaring</ToolTip>
+					<Default>variable</Default>
+				</Literal>
+			</Declarations>
+			<Imports>
+				<Import>
+					<Namespace>
+						UnityWeld.Binding
+					</Namespace>
+				</Import>
+			</Imports>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
