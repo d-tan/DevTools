@@ -12,19 +12,20 @@
 		</Header>
 		<Snippet>
 			<Declarations>
-        		<Literal>
+				<Literal>
 					<ID>message</ID>
 					<ToolTip>Message</ToolTip>
 					<Default>Message</Default>
 				</Literal>
 			</Declarations>
-			<Code Language="csharp"><![CDATA[Debug.LogWarningFormat("$message$");]]>
+			<Code Language="csharp">
+				<![CDATA[Debug.LogWarning($$"$message$", gameObject);]]>
 			</Code>
 			<Imports>
-      <Import>
-        <Namespace>UnityEngine</Namespace>
-      </Import>
-      </Imports>
+				<Import>
+					<Namespace>UnityEngine</Namespace>
+				</Import>
+			</Imports>
 		</Snippet>
 	</CodeSnippet>
 </CodeSnippets>

@@ -12,7 +12,7 @@
 		</Header>
 		<Snippet>
 			<Declarations>
-        		<Literal>
+				<Literal>
 					<ID>condition</ID>
 					<ToolTip>Condition to assert</ToolTip>
 					<Default>cond</Default>
@@ -23,14 +23,15 @@
 					<Default>Message</Default>
 				</Literal>
 			</Declarations>
-			<Code Language="csharp"><![CDATA[Debug.AssertFormat($condition$, "$message$");]]>
+			<Code Language="csharp">
+				<![CDATA[Debug.Assert($condition$, $$"$message$");]]>
 			</Code>
 
 			<Imports>
-      <Import>
-        <Namespace>UnityEngine</Namespace>
-      </Import>
-      </Imports>
+				<Import>
+					<Namespace>UnityEngine</Namespace>
+				</Import>
+			</Imports>
 		</Snippet>
 	</CodeSnippet>
 </CodeSnippets>

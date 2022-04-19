@@ -27,26 +27,20 @@
 					<ToolTip>Property Name</ToolTip>
 					<Default>Foo</Default>
 				</Literal>
-				<Literal>
-					<ID>Event</ID>
-					<ToolTip>Event Type</ToolTip>
-					<Default>UnityEvent</Default>
-				</Literal>
 			</Declarations>
-			<Code Language="csharp"><![CDATA[private $type$ $name$;
-			
+			<Code Language="csharp">
+				<![CDATA[private $type$ m_$name$;
+
 			public $type$ $Name$ {
-				get { return $name$; }
-				set {
-					if ($name$.Equals(value)) return;
-					$name$ = value;
+				get { return m_$name$; }
+				private set {
+					if (m_$name$.Equals(value)) return;
+					m_$name$ = value;
 					$Name$UpdateEvent.Invoke();
 				}
 			}
 
-			protected $Event$ $Name$UpdateEvent = new $Event$();
-
-			public $Event$ Get$Name$UpdateEvent => $Name$UpdateEvent;
+			public Action On$Name$Change = new Action(delegate{ });
 			]]>
 			</Code>
 		</Snippet>
