@@ -29,18 +29,18 @@
 				</Literal>
 			</Declarations>
 			<Code Language="csharp">
-				<![CDATA[private $type$ m_$name$;
+				<![CDATA[private $type$ $name$;
 
 			public $type$ $Name$ {
-				get { return m_$name$; }
+				get { return $name$; }
 				private set {
-					if (m_$name$.Equals(value)) return;
-					m_$name$ = value;
-					$Name$UpdateEvent.Invoke();
+					if ($name$.Equals(value)) return;
+					$name$ = value;
+					$Name$ChangeEvent.Invoke();
 				}
 			}
 
-			public Action On$Name$Change = new Action(delegate{ });
+			public Action $Name$ChangeEvent = new Action(delegate{ });
 			]]>
 			</Code>
 		</Snippet>
