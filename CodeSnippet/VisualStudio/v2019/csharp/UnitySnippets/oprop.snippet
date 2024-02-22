@@ -22,19 +22,25 @@
 					<ToolTip>Variable Name</ToolTip>
 					<Default>foo</Default>
 				</Literal>
+				<Literal>
+					<ID>Name</ID>
+					<ToolTip>Property Name</ToolTip>
+					<Default>Foo</Default>
+				</Literal>
 			</Declarations>
-			<Code Language="csharp"><![CDATA[private $type$ $name$;
-			
-			public $type$ $name$ {
+			<Code Language="csharp">
+				<![CDATA[private $type$ $name$;
+
+			public $type$ $Name$ {
 				get { return $name$; }
-				set {
+				private set {
 					if ($name$.Equals(value)) return;
 					$name$ = value;
-					$name$UpdateEvent.Invoke();
+					$Name$ChangeEvent.Invoke();
 				}
 			}
 
-			public UnityEvent $name$UpdateEvent = new UnityEvent();
+			public Action $Name$ChangeEvent = new Action(delegate{ });
 			]]>
 			</Code>
 		</Snippet>

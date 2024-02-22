@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Eager Singleton</Title>
+			<Shortcut>uesgt</Shortcut>
+			<Description>Code snippet for a eagerly loaded Singleton</Description>
+			<Author>Danny T</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal default="true" Editable="false">
+                    <ID>classname</ID>
+                    <ToolTip>Class name</ToolTip>
+                    <Function>ClassName()</Function>
+                    <Default>ClassNamePlaceholder</Default>
+                </Literal>
+			</Declarations>
+			<Code Language="csharp">
+  			<![CDATA[#region Singleton
+			private static $classname$ instance;
+
+			public static $classname$ Instance {
+				get { 
+					Init();
+            		return instance; 
+				}
+				private set { instance = value; }
+			}
+
+			[RuntimeInitializeOnLoadMethod]
+			private static void Init() {
+				// Unity replaces a destroyed game object with a non-null "destroyed" object.
+				// Using .Equals checks against that.
+				if (instance == null || instance.Equals(null)) {
+					GameObject gameObject = new GameObject("Spawned $classname$");
+					instance = gameObject.AddComponent<$classname$>();
+					DontDestroyOnLoad(gameObject);
+					
+					Debug.LogFormat("Spawned new {0} singleton", typeof($classname$));
+				}
+			}
+			#endregion Singleton
+			$end$]]>
+			</Code>
+
+			<Imports>
+      <Import>
+        <Namespace>UnityEngine</Namespace>
+      </Import>
+      </Imports>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Basic Collection Binding</Title>
+			<Author>Jacob Duniam</Author>
+			<Description>Implements a basic collection binding property</Description>
+			<Shortcut>lstb</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[[Binding]
+        public ObservableList<$type$> $name$ {
+        get { return _$name$; }
+        private set {
+        _$name$ = value;
+        OnPropertyChanged(nameof($name$));
+        }
+        }
+        private ObservableList<$type$> _$name$ = new ObservableList<$type$>();]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>The type of the collection you are declaring</ToolTip>
+					<Default>bool</Default>
+				</Literal>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>The name of the collection you are declaring</ToolTip>
+					<Default>BoundProperty</Default>
+				</Literal>
+			</Declarations>
+			<Imports>
+				<Import>
+					<Namespace>
+						UnityWeld.Binding
+					</Namespace>
+				</Import>
+			</Imports>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

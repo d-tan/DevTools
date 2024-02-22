@@ -2,11 +2,9 @@
 <CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>Variable</Title>
-			<Shortcut>varr</Shortcut>
-			<Description>
-				Code snippet for a variable
-			</Description>
+			<Title>Function</Title>
+			<Shortcut>func</Shortcut>
+			<Description>Code snippet for a function</Description>
 			<Author>Danny T</Author>
 			<SnippetTypes>
 				<SnippetType>Expansion</SnippetType>
@@ -16,27 +14,35 @@
 			<Declarations>
 				<Literal>
 					<ID>access</ID>
-					<ToolTip>Access type</ToolTip>
+					<ToolTip>Access Type</ToolTip>
 					<Default>private</Default>
 				</Literal>
 				<Literal>
 					<ID>type</ID>
-					<ToolTip>Object type</ToolTip>
-					<Default>int</Default>
+					<ToolTip>Return type</ToolTip>
+					<Default>object</Default>
 				</Literal>
 				<Literal>
 					<ID>name</ID>
-					<ToolTip>Variable name</ToolTip>
-					<Default>myVar</Default>
+					<ToolTip>Method Name</ToolTip>
+					<Default>Method</Default>
 				</Literal>
 				<Literal>
-					<ID>value</ID>
-					<ToolTip>Value</ToolTip>
-					<Default>val</Default>
+					<ID>paramType</ID>
+					<ToolTip>Parameter type</ToolTip>
+					<Default>object</Default>
+				</Literal>
+				<Literal>
+					<ID>param</ID>
+					<ToolTip>Parameter name</ToolTip>
+					<Default>param</Default>
 				</Literal>
 			</Declarations>
 			<Code Language="csharp">
-				<![CDATA[$access$ $type$ $name$ = $value$;]]>
+				<![CDATA[$access$ $type$ $name$($paramType$ _$param$)
+	{
+    return new System.NotImplementedException();
+	}]]>
 			</Code>
 		</Snippet>
 	</CodeSnippet>

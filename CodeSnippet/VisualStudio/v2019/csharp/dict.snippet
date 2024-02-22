@@ -2,9 +2,9 @@
 <CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>Array</Title>
-			<Shortcut>arr</Shortcut>
-			<Description>Code snippet to create an array</Description>
+			<Title>Dictionary</Title>
+			<Shortcut>dict</Shortcut>
+			<Description>Code snippet to create a dictionary</Description>
 			<Author>Danny T</Author>
 			<SnippetTypes>
 				<SnippetType>Expansion</SnippetType>
@@ -23,13 +23,29 @@
 					<Default>MyType</Default>
 				</Literal>
 				<Literal>
+					<ID>key</ID>
+					<ToolTip>Type for the key</ToolTip>
+					<Default>Type</Default>
+				</Literal>
+				<Literal>
+					<ID>value</ID>
+					<ToolTip>Type for the value</ToolTip>
+					<Default>Type</Default>
+				</Literal>
+				<Literal>
 					<ID>name</ID>
-					<ToolTip>Array Name</ToolTip>
-					<Default>myArray</Default>
+					<ToolTip>List Name</ToolTip>
+					<Default>myList</Default>
 				</Literal>
 			</Declarations>
-			<Code Language="csharp"><![CDATA[$access$ $type$[] m_$name$ = new $type$[0] { };]]>
+			<Code Language="csharp"><![CDATA[$access$ Dictionary<$key$, $value$> $name$ = new Dictionary<$key$, $value$>();]]>
 			</Code>
+
+			<Imports>
+      <Import>
+        <Namespace>System.Collections</Namespace>
+      </Import>
+      </Imports>
 		</Snippet>
 	</CodeSnippet>
 </CodeSnippets>

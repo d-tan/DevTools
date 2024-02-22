@@ -2,9 +2,9 @@
 <CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>Debug.LogWarningFormat</Title>
-			<Shortcut>logw</Shortcut>
-			<Description>Code snippet to create Unity Debug.LogWarningFormat</Description>
+			<Title>Debug.AssertFormat</Title>
+			<Shortcut>loga</Shortcut>
+			<Description>Code snippet to create Unity Debug.AssertFormat</Description>
 			<Author>Danny T</Author>
 			<SnippetTypes>
 				<SnippetType>Expansion</SnippetType>
@@ -13,14 +13,20 @@
 		<Snippet>
 			<Declarations>
 				<Literal>
+					<ID>condition</ID>
+					<ToolTip>Condition to assert</ToolTip>
+					<Default>cond</Default>
+				</Literal>
+				<Literal>
 					<ID>message</ID>
 					<ToolTip>Message</ToolTip>
 					<Default>Message</Default>
 				</Literal>
 			</Declarations>
 			<Code Language="csharp">
-				<![CDATA[Debug.LogWarning($$"$message$", gameObject);]]>
+				<![CDATA[Debug.Assert($condition$, $$"$message$");]]>
 			</Code>
+
 			<Imports>
 				<Import>
 					<Namespace>UnityEngine</Namespace>

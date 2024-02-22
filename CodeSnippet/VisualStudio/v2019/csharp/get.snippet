@@ -2,9 +2,9 @@
 <CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>Return Method</Title>
-			<Shortcut>rm</Shortcut>
-			<Description>Code snippet for a basic return method</Description>
+			<Title>Getter</Title>
+			<Shortcut>get</Shortcut>
+			<Description>Code snippet for basic return method</Description>
 			<Author>Danny T</Author>
 			<SnippetTypes>
 				<SnippetType>Expansion</SnippetType>
@@ -12,24 +12,24 @@
 		</Header>
 		<Snippet>
 			<Declarations>
-        <Literal>
+				<Literal>
 					<ID>access</ID>
 					<ToolTip>Access Type</ToolTip>
 					<Default>private</Default>
 				</Literal>
-        <Literal>
-          <ID>type</ID>
-          <ToolTip>Return type</ToolTip>
-          <Default>object</Default>
-        </Literal>
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>Return type</ToolTip>
+					<Default>object</Default>
+				</Literal>
 				<Literal>
 					<ID>name</ID>
 					<ToolTip>Method Name</ToolTip>
-					<Default>MyMethod</Default>
+					<Default>Method</Default>
 				</Literal>
 			</Declarations>
 			<Code Language="csharp">
-    <![CDATA[$access$ $type$ $name$ ()
+				<![CDATA[$access$ $type$ $name$()
 	{
     return new System.NotImplementedException();
 	}]]>
