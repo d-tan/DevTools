@@ -36,11 +36,11 @@
 				private set {
 					if ($name$.Equals(value)) return;
 					$name$ = value;
-					$Name$ChangeEvent.Invoke();
+					$Name$ChangeEvent.Invoke($name$);
 				}
 			}
 
-			public Action $Name$ChangeEvent = new Action(delegate{ });
+			public Action<$type$> $Name$ChangeEvent = new Action<$type$>(delegate{ });
 			]]>
 			</Code>
 		</Snippet>
