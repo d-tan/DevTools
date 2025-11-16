@@ -40,9 +40,12 @@
 				}
 			}
 
-			public Action<$type$> $Name$ChangeEvent = new Action<$type$>(delegate{ });
+			public UnityEvent<$type$> $Name$ChangeEvent = new UnityEvent<$type$>();
 			]]>
 			</Code>
+      <Import>
+        <Namespace>UnityEngine.Events</Namespace>
+      </Import>
 		</Snippet>
 	</CodeSnippet>
 </CodeSnippets>
