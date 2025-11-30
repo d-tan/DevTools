@@ -1,8 +1,8 @@
-
-/// <summary>
-/// 
-/// </summary>
-public struct #SCRIPTNAME# {
-
-	
-}
+#ROOTNAMESPACEBEGIN#
+	/// <summary>
+	/// 
+	/// </summary>
+	public struct #SCRIPTNAME# {
+		
+	}
+#ROOTNAMESPACEEND#

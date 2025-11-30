@@ -1,8 +1,9 @@
-
-/// <summary>
-/// 
-/// </summary>
-public interface #SCRIPTNAME# {
-
+#ROOTNAMESPACEBEGIN#
 	
-}
+	/// <summary>
+	/// 
+	/// </summary>
+	public interface #SCRIPTNAME# {
+	
+	}
+#ROOTNAMESPACEEND#

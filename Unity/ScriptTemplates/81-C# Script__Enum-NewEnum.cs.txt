@@ -1,12 +1,13 @@
-
-/// <summary>
-/// 
-/// </summary>
-public enum #SCRIPTNAME# {
-
+#ROOTNAMESPACEBEGIN#
 	/// <summary>
-	/// Default Enum
+	/// 
 	/// </summary>
-	Default
+	public enum #SCRIPTNAME# {
 	
-}
+		/// <summary>
+		/// Default Enum
+		/// </summary>
+		Default
+		
+	}
+#ROOTNAMESPACEEND#
